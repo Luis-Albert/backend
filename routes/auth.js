@@ -6,7 +6,7 @@ const { check } = require("express-validator");
 
 //crear un usuario
 
-//api/usuario
+//api/auth
 router.post("/",
   [
     check("email", "Agrega un email valido").isEmail(),
