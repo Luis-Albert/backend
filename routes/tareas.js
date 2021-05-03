@@ -20,7 +20,9 @@ router.post(
 router.get("/", auth, tareaController.obtenerTareas);
 
 //actualizar tarea
+router.put("/:id", auth, tareaController.actualizarTarea);
 
-router.put('/:id', auth, tareaController.actualizarTarea)
+//eliminar tarea
+router.delete("/:id", auth, tareaController.eliminarTarea);
 
 module.exports = router;
