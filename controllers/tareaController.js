@@ -80,8 +80,8 @@ exports.actualizarTarea = async (req, res) => {
 
     //crear un objeto con la nueva informacion
     const nuevaTarea = {};
-    if (nombre) nuevaTarea.nombre = nombre;
-    if (estado) nuevaTarea.estado = estado;
+    nuevaTarea.nombre = nombre;
+    nuevaTarea.estado = estado;
 
     //guardar la tarea
     tarea = await Tarea.findByIdAndUpdate({ _id: req.params.id }, nuevaTarea, {
@@ -100,7 +100,7 @@ exports.actualizarTarea = async (req, res) => {
 exports.eliminarTarea = async (req, res) => {
   try {
     //extraer el proyecto y comprobar si existe
-    const { proyecto } = req.body;
+    const { proyecto } = req.query;
 
     //si la tarea existe o no
     let tarea = await Tarea.findById(req.params.id);
