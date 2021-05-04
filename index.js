@@ -16,7 +16,7 @@ app.use(morgan("dev"));
 app.use(express.json({ extended: true }));
 
 //Puerto de la app
-const PORT = process.env.PORT || 4000;
+const port = process.env.PORT || 4000;
 
 //importar rutas
 app.use("/api/usuarios", require("./routes/usuarios"));
@@ -25,6 +25,6 @@ app.use("/api/proyectos", require("./routes/proyectos"));
 app.use("/api/tareas", require("./routes/tareas"));
 
 //arrancar la app
-app.listen(PORT, () => {
+app.listen(port, "0.0.0.0", () => {
   console.log(`El servidor esta funcionado en el puerto ${PORT}`);
 });
