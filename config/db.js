@@ -9,7 +9,7 @@ const conectarDB = async () => {
       useFindAndModify: false,
       useCreateIndex: true,
     });
-    console.log("DB conectada");
+    console.log("DB is conneted");
   } catch (error) {
     console.log(error);
     process.exit(1); //detener la app
